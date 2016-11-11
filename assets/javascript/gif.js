@@ -4,25 +4,25 @@ $(document).ready(function() {
     // will search for
     var search = {
         subjects: [{
-            topic: 'building',
+            topic: 'planet Mercury',
         }, {
-            topic: 'nature',
+            topic: 'planet Venus',
         }, {
-            topic: 'art',
+            topic: 'planet Earth',
         }, {
-            topic: 'architecture',
+            topic: 'planet Mars',
         }, {
-            topic: 'design',
+            topic: 'planet Jupiter',
         }, {
-            topic: 'scifi',
+            topic: 'planet Saturn',
         }, {
-            topic: 'design',
+            topic: 'planet Uranus',
         }, {
-            topic: 'futurism',
+            topic: 'planet Neptune',
         }, {
-            topic: 'universe',
+            topic: 'planet Pluto',
         }, {
-            topic: 'hologram',
+            topic: 'sun',
         }, ]
     };
     // call the function
@@ -35,16 +35,19 @@ $(document).ready(function() {
         var topicsHTML = '';
         // a for loop will continue for the length of the subjects object 
         for (var i = 0; i < search.subjects.length; i++) {
-            // create a variable that will access the search variable's subject objects at each topic index
-            var buttonsHTML = search.subjects[i];
-            // this variable accesses each topic of the search object
-            var buttonString = buttonsHTML.topic;
-            // create a string to display the contents of each button by accessing the index
-            // of the topic in the search object
-            topicsHTML = topicsHTML + '<button>' + buttonString + '</button>';
+            // create a variable button that is equal to a button element in order to create dynamic
+            // buttons in the page
+            var button = $('<button>');
+            // to that button, add text that will be taken from the object subjects at each index
+            button.text(search.subjects[i].topic);
+            // add the attribute data-topic to each button so that each button's topic can be queried 
+            // using ajax by linking them together
+            button.attr('data-topic', search.subjects[i].topic);
+            // append the button that is created to the div with id = searchTopic so that it appears on the page
+            $('#searchTopic').append(button);
         }
         // append the DOM to display topic name as button
-        $('#searchTopic').html(topicsHTML);
+        // $('#searchTopic').html(topicsHTML);
     }
     // create an onclick event 
     $('button').on('click', function() {
@@ -64,45 +67,29 @@ $(document).ready(function() {
 
             });
     });
+
+    // var topicsDiv = $('<div>');
+
+    // var p = $('<p>');
+
+    // var topicsImage = $('<img>');
+    // topicsImage.attr('src', results[i].images.fixed_height.url);
+    // var rating = results[i].rating;
+
+
+    // p = p.html(rating);
+
+    // topicsDiv.append(p);
+    // topicsDiv.append(topicsImage);
+
+    // $('#gifsHere').prepend(topicsDiv);
+
 });
 
 
+// var url = results[i].fixed_height.url;
 
 
-//              step 3:
-//                 * uncomment the for loop above and the closing curly bracket below
-//                 * make a div and reference it in a variable named animalDiv
-//                 * make a paragraph tag and put it in a variable named p
-//                     * set the text of the paragraph to the rating of the image in results[i]
-//                 * make an image and reference it in a variable named animalImage
-//                 * set the image's src to results[i]'s fixed_height.url
-
-//                 * append the p variable to the animalDiv variable
-//                 * append the animalImage variable to the animalDiv variable
-
-//                 * prepend the animalDiv variable to the element with an id of gifsAppearHere
-
-
-
-//             //------------put step 3 in between these dashes--------------------
-//             var topicsDiv = $('<div>');
-
-//             var p = $('<p>');
-
-//             var topicsImage = $('<img>');
-//             topicsImage.attr('src', results[i].images.fixed_height.url);
-
-//             // var url = results[i].fixed_height.url;
-
-//             var rating = results[i].rating;
-
-
-//             p = p.html(rating);
-
-//             topicsDiv.append(p);
-//             topicsDiv.append(topicsImage);
-
-//             $('#gifsHere').prepend(topicsDiv);
 //             //--------------------------------
 //         }
 
