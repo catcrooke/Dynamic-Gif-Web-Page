@@ -4,23 +4,23 @@ $(document).ready(function() {
     // will search for
     var topics = {
         subjects: [{
-            item: 'planet Mercury',
+            item: 'Mercury',
         }, {
-            item: 'planet Venus',
+            item: 'Venus',
         }, {
-            item: 'planet Earth',
+            item: 'Earth',
         }, {
-            item: 'planet Mars',
+            item: 'Mars',
         }, {
-            item: 'planet Jupiter',
+            item: 'Jupiter',
         }, {
-            item: 'planet Saturn',
+            item: 'Saturn',
         }, {
-            item: 'planet Uranus',
+            item: 'Uranus',
         }, {
-            item: 'planet Neptune',
+            item: 'Neptune',
         }, {
-            item: 'planet Pluto',
+            item: 'Pluto',
         }, {
             item: 'sun',
         }, ]
@@ -50,7 +50,7 @@ $(document).ready(function() {
     // create an onclick event to load gifs to the page for each button that is clicked
     $('button').on('click', function() {
         // for each item in the object, add the data 
-        var item = $(this).data('item');
+        var item = $(this).data('topic');
         // use queryURL to search giphy for each item in the object 
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + item + "&api_key=dc6zaTOxFJmzC&limit=10";
         // specify to ajax to use the queryURL variable and the GET method to obtain the giphy images
@@ -73,7 +73,9 @@ $(document).ready(function() {
 
                     var p = $('<p>');
                     var topicsImage = $('<img>');
-                    topicsImage.attr('src', results[i].images.fixed_width_still, results[i].images.fixed_height);
+                    topicsImage.attr('src', results[i].images.fixed_height.url);
+                    topicsImage.attr('data-animate', results[i].images.fixed_height.url);
+                    topicsImage.attr('data-still', results[i].images.fixed_width_still.url);
 
                     var rating = results[i].rating;
                     p = p.html(rating);
