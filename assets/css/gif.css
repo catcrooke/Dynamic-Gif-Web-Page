@@ -16,14 +16,15 @@ body {
 button,
 #add-topic {
     margin: 10px;
-    background-color: rgb(255, 255, 0);
+    background-color: rgb(255, 153, 0);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
 }
 
 p {
-    color: rgb(255, 255, 0);
+    color: rgb(255, 153, 0);
     font-size: 17px;
+    font-weight: bold;
     font-family: 'Source Sans Pro', sans-serif;
 }
 

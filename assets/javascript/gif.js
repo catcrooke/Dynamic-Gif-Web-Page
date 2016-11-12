@@ -116,7 +116,7 @@ $(document).ready(function() {
                     // create a variable "rating" that holds all of the ratings for each item in the subjects object
                     var rating = results[i].rating;
                     // add the ratings to the html of the p element along with a text string
-                    p = p.html("rating: " + rating);
+                    p = p.html("Rating: " + rating);
                     // append topicsDiv to topicsImage 
                     topicsDiv.append(topicsImage);
                     // append topicsDiv to the p element
