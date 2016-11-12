@@ -12,18 +12,29 @@
 
 <body>
     <div class='wrapper'>
-        <div class="btn btn-default">
-            <div id='searchTopic'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="btn btn-default">
+                    <div id='searchTopic'>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class=container>
         <div class='row'>
-            <div class='col-md-6'></div>
-            <div class='images' id='gifsHere'>
+            <div class='col-md-8'>
+                <div class='images-row' id='gifsHere'>
+                </div>
             </div>
-            <div class='col-md-6'>
-                <div class='form'>
+            <div class='col-md-4'>
+                <div class='searchTopic'>
+                    <form class="navbar-form navbar-left add-button-form" role="search">
+                        <div class="form-group">
+                            <input type="text" id="new-topic">
+                            <input type="submit" value="Add Topic" id="add-topic">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
